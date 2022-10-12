@@ -8,6 +8,31 @@
     </head>
 
     <body>
+      <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <a href="#" class="navbar-brand">Great Quotes</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" style ="padding-top: 100px">
       <h2><a href="create.php">Add a new author</a><hr /></h2>
         <?php
             $fh = fopen('../data/authors.csv', 'r'); //open authors page in read mode
@@ -24,7 +49,9 @@
             } //read line by line
             fclose($fh); //close file
         ?>
-
+    </div>
+      <!-- JavaScript Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     </body>
 
 </html>
