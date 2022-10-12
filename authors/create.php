@@ -16,6 +16,7 @@
     </head>
 
     <body>
+      <div class="container">
         <?php
           if(count($_POST)>0){
             //make sure name is not already in the file
@@ -53,13 +54,13 @@
               <form method="post">
                 <h6 class="card-subtitle mb-2 text-muted">Enter Author's name</h6>
                 <p class="card-text"><input type="text" name="name" class="form-control form-control-lg" placeholder="Authors Name"/></p>
-                <button type="submit" class="btn btn-success">Add author</button>
+                <button type="submit" class="btn btn-success">Add author</button><br /><br />
 
                 <a href="index.php" class="btn btn-primary" role="button">Go back to index </a>
               </form>
           </div>
         </div>
 
-
+      </div>
     </body>
 </html>

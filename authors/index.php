@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a href="#" class="nav-link">Sign Up</a>
+              <a href="../auth/signup.php" class="nav-link">Sign Up</a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">Sign In</a>
@@ -33,16 +33,16 @@
     </nav>
 
     <div class="container" style ="padding-top: 100px">
-      <h2><a href="create.php">Add a new author</a><hr /></h2>
+      <h2><a class="btn btn-success" href="create.php">Add a new author</a><hr /></h2>
         <?php
             $fh = fopen('../data/authors.csv', 'r'); //open authors page in read mode
             $index=0;
             while($line=fgets($fh)){
               if(strlen(trim($line))>0) {
                 echo '<h1><a href="detail.php?index='.$index.'">'.trim($line).'</a>
-                (<a href="detail.php?index='.$index.'">view author</a>)
-                (<a href="modify.php?index='.$index.'">modify author</a>)
-                (<a href="delete.php?index='.$index.'">delete author</a>)</h1>';
+                <a class="btn btn-primary" href="detail.php?index='.$index.'">view author</a>
+                <a class="btn btn-secondary" href="modify.php?index='.$index.'">modify author</a>
+                <a class="btn btn-danger" href="delete.php?index='.$index.'">delete author</a></h1>';
                 $index++;
               }
 
