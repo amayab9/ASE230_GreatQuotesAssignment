@@ -1,4 +1,9 @@
 <?php
+    /// delete author should also delete quotes by that author
+    /// maybe the delete method here should touch the quotes file too
+    /// any author match changes the author name in quotes to a new pattern
+    /// then quotes page is sorted to pattern for deleted author is at bottom of list
+    /// then rows at bottom are deleted 
 
     if(!isset($_GET['index'])){
         die('Please enter the author you want to delete');

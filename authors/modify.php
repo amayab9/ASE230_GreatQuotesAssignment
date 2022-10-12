@@ -3,7 +3,7 @@
 if (count($_POST)>0){
   // check that the author's name is in the file
   if(!isset($_GET['index'])){
-    die('Please enter the author you want to delete');
+    die('Please enter the author you want to modify');
   }
 
   // wrap in file_exists
