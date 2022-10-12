@@ -8,7 +8,7 @@ $errorMessage =''; //instead of using "die", return a message that can be printe
 
 if(count($_POST)>0){
 	// 1. check if email and password have been submitted
-	if (empty($_POST['username']) || empty($_POST['password']) ||) {
+	if (empty($_POST['username']) || empty($_POST['password']) ||)) {
     	// 2. check if the email is well formatted
 		if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 			// 3. check if the password is well formatted
@@ -20,24 +20,24 @@ if(count($_POST)>0){
 			// 8. check if the password is correct
 			// 9. store session information
 			// 10. redirect the user to the members_page.php page
-			
+
 			/*
 			echo 'check email+password';
 			if(true){
 				$_SESSION['logged']=true;
-				
+
 			}else $_SESSION['logged']=false;
 			*/
 			} else{
 				$errorMessage = 'Please enter your password';
 			}
-		} else{
+		}else{
 			$errorMessage = 'Your email is invalid';
 		}
 	} else {
 		$errorMessage = 'Please enter a username and password';
 	}
-	
+
 }
 
 // improve the form
