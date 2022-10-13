@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- CREATE QUOTE -->
 <html>
     <head>
         <meta charset="utf-8">
@@ -44,9 +45,10 @@
         <!-- <a href="index.php">Go back to index </a>
         <hr /> -->
         <form method="post">
-          Enter the quote text <br />
+          Enter your quote and its source or author.  <br />
+          <input type="text" name="source" /><br />
           <input type="text" name="quote" /><br />
-          <button type="submit" >Add quote</button>
+          <button type="submit" >Add to the collection</button>
         </form>
 
     </body>
