@@ -38,14 +38,31 @@ else {
     $line_counter++;
   }
 ?>
-<a href="index.php">Go back to index </a>
-<hr />
-<form method="post">
- Enter the author's name <br />
- <input type="text" name="name" value="<?= $author_name ?>"/><br />
- <button type="submit" >Modify author</button>
 
-</form>
+<!doctype HTML>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Great Quotes - Modify Author</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    </head>
+
+    <body>
+      <div class="container">
+        <a  class="btn btn-dark" href="index.php">Go back to index </a>
+        <hr />
+
+        <form method="post">
+          Enter the author's name <br />
+          <input type="text" name="name" value="<?= $author_name ?>"/><br /><br />
+          <button type="submit" >Modify author</button>
+        </form>
+
+      </div>
+    </body>
+  </html>
+
 <?php
 }  // closes else statement
 ?>

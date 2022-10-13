@@ -8,7 +8,8 @@
     </head>
 
     <body>
-      <a href="index.php">Go back to author index </a>
+      <div class="container">
+      <a class="btn btn-dark" href="index.php">Go back to author index </a>
       <hr />
 
       <?php
@@ -24,8 +25,9 @@
         fclose($fh);
 
       ?>
-      (<a href="modify.php?index=<?= $_GET['index'] ?>">modify author</a>)
-      (<a href="delete.php?index=<?= $_GET['index'] ?>">delete author</a>)
+      <a class="btn btn-secondary" href="modify.php?index=<?= $_GET['index'] ?>">modify author</a>
+      <a class="btn btn-danger" href="delete.php?index=<?= $_GET['index'] ?>">delete author</a>
+      </div>
     </body>
 
 </html>
