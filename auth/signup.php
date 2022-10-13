@@ -1,6 +1,10 @@
 <?php
 session_start();
+#require_once('auth.php');
+#signup($_POST,'users.csv');
 // if the user is alreay signed in, redirect them to the members_page.php page
+// Single line if statement, no wrapping
+if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) header('location: members_page.php');
 
 // use the following guidelines to create the function in auth.php
 // instead of using "die", return a message that can be printed in the HTML page
@@ -13,7 +17,7 @@ if(count($_POST)>0){
 				// check if password length is between 8 and 16 characters
 				if(strlen($_POST['password']) >= 8 && strlen($_POST['password']) < 16){
 					// check if the password contains at least 2 special characters
-					if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/!', $_POST['password'])){
+					if (preg_match('/[`~!@#$%^&*()_|+\-=?;:\'",.<>\{\}\[\]\\\/]/', $_POST['password'])){
 						// check if the file containing banned users exists
 						if(file_exists('../data/banned.csv')){
 							// check if the email has not been banned
@@ -41,7 +45,7 @@ if(count($_POST)>0){
     											fputs($fh,$_POST['email'].';'.password_hash($_POST['password'],PASSWORD_DEFAULT).PHP_EOL);
     											fclose($fh);
 												header('location: signin.php');
-												 
+
 												// show them a success message and redirect them to the sign in page
 											}
 										}
@@ -51,7 +55,7 @@ if(count($_POST)>0){
 										$errorMessage = 'Having an issue. Refresh and try again';
 									}
 								}
-									
+
 							}
 							fclose($fh);
 
@@ -70,8 +74,8 @@ if(count($_POST)>0){
 	} else{
 		$errorMessage = 'Please enter your email and password';
 	}
-	
-	
+
+
 
 }
 
@@ -110,20 +114,20 @@ if(count($_POST)>0){
 				</ul>
 				</div>
 			</div>
-			</nav>	
+			</nav>
 			<div class="container" style ="padding-top: 100px">
 				<form method="POST">
 					Sign up with Great Quotes!<br />
 					<input type="email" name="email" placeholder="email" id="email" /><br />
 					<input type="password" name="password" placeholder="password" id="password" /><br /><br />
-					<p>Note: 
+					<p>Note:
 						<ul>
 							<li>Password should have one special character</li>
 							<li>Password should be 8 - 16 characters</li>
 						</ul>
 					</p>
-					
-					
+
+
 					<button type="submit" class="btn btn-success">Sign up</button><br />
 					<?php echo $errorMessage; ?>
 				</form>
