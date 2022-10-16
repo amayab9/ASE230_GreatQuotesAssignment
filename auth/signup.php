@@ -35,10 +35,10 @@ if(count($_POST)>0){
 										} else {
 											
 										// encrypt password, save the user in the database, show them a success message and redirect them to the sign in page
-										/*$fh=fopen('users.csv', 'a+');
+										$fh=fopen('users.csv', 'a+');
 										fputs($fh,$_POST['email'].';'.password_hash($_POST['password'],PASSWORD_DEFAULT).PHP_EOL);
 										fclose($fh);
-										header('location: signin.php');*/
+										header('location: signin.php');
 										}
 										
 									}						
